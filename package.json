@@ -1,0 +1,15 @@
+{
+  "name": "test-big-chunk-front-k9",
+  "version": "1.0.0",
+  "description": "test big chunk of actions in front using k9",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "k9": "^0.0.2"
+  }
+}
