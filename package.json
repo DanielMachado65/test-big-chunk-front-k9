@@ -4,7 +4,7 @@
   "description": "test big chunk of actions using k6",
   "main": "index.js",
   "scripts": {
-    "load-test": "k6 run tests/login.k6.js"
+    "load-test": "k6 run tests/tracking_events.k6.js"
   },
   "keywords": [],
   "author": "",
