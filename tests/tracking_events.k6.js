@@ -2,8 +2,6 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 const BASE_URL = __ENV.BASE_URL;
-const EMAIL = __ENV.EMAIL || "teste@example.com";
-const PASSWORD = __ENV.PASSWORD || "senha123";
 
 if (!BASE_URL) {
   throw new Error(
@@ -25,10 +23,11 @@ export const options = {
 };
 
 export default function () {
-  const res = http.post(`${BASE_URL}/prod/tracking`, {
-    email: EMAIL,
-    password: PASSWORD,
-  });
+  const res = http.post(`${BASE_URL}/prod/tracking`, [
+    { id: "input-email", type: "input", timestamp: new Date().getTime() },
+    { id: "input-email", type: "input", timestamp: new Date().getTime() },
+    { id: "input-email", type: "input", timestamp: new Date().getTime() },
+  ]);
 
   check(res, { "status 200": (r) => r.status === 200 });
   sleep(1);
